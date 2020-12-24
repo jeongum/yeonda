@@ -20,6 +20,17 @@
                             </button>
                       	</div>
                     @endif
+                    @if (session('role'))
+                        <div class="alert border border-danger text-danger alert-dismissible d-flex align-items-center p-md-4 mb-2 fade show" role="alert">
+                            <i class="gd-alert icon-text text-danger mr-2"></i>
+                            <p class="mb-0">
+                          		관리자만 로그인 가능합니다.
+                            </p>
+                            <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+                          		<i class="gd-close icon-text icon-text-xs" aria-hidden="true"></i>
+                            </button>
+                      	</div>
+                    @endif
 					<form method="POST" action="{{ route('login') }}">
 						@csrf
 						<div class="form-group">

@@ -4,7 +4,7 @@
 	<div class="navbar-brand-wrapper d-flex align-items-center col-auto">
 	  <!-- Logo For Mobile View -->
 	  <a class="navbar-brand navbar-brand-mobile" href="/">
-		<img class="img-fluid w-100" src="{{ asset('img/logo-mini.png') }}" alt="{{ config('app.name', 'Laravel') }}">
+		<img class="img-fluid w-100" src="{{ asset('img/logo/L_TB_512.png') }}" alt="{{ config('app.name', 'Laravel') }}">
 	  </a>
 	  <!-- End Logo For Mobile View -->
 

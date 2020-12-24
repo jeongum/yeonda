@@ -20,8 +20,15 @@ class DashboardController extends Controller
         
         try{
             
+            $db = app('firebase.database');
             $user = $auth->signInWithEmailAndPassword($email, $password);
             $data = $user->data();
+            
+            $user_info = $db->getReference('users/'.$data['localId'] )->getValue();
+            if($user_info['role']=='user'){
+                
+                return redirect()->route('welcome')->with('role', 'error');
+            }
             session(['current_user_id' => $data['localId']]);
             
         } catch(\Kreait\Firebase\Auth\SignIn\FailedToSignIn $e){
@@ -44,3 +51,4 @@ class DashboardController extends Controller
     }
     
 }
+

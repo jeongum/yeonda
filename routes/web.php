@@ -27,5 +27,7 @@ Route::match(['post','get'],'/logout', function(){
 });
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
+Route::resource('doorlocks','DoorlockController');
+Route::resource('spaces','SpaceController');
+Route::resource('reservations','ReservationController');
     
